@@ -39,8 +39,6 @@ class SendScheduleEmailService extends LoggerService
                     $this->entityManager->commit();
                 }
             }
-
-            return $result;
         } catch (\Exception $e) {
             if ($this->entityManager->isOpen()) {
                 $this->entityManager->flush();
@@ -48,6 +46,8 @@ class SendScheduleEmailService extends LoggerService
             }
             throw $e;
         }
+
+        return $result;
     }
 
     private function markEmailAsSending(array &$emailsToSend): ?bool

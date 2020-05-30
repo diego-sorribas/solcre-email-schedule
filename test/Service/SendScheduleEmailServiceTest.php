@@ -78,6 +78,6 @@ class SendScheduleEmailServiceTest extends TestCase
     {
         $sendScheduleEmailService = $this->setupWithoutEmailsToSend();
 
-        $this->assertEquals($sendScheduleEmailService->sendScheduledEmails(), ['success' => false]);
+        $this->assertEquals($sendScheduleEmailService->sendScheduledEmails(), false);
     }
 }
